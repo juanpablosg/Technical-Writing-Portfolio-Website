@@ -5,7 +5,7 @@
 :root {
     --BGCOLOR: rgb(231, 84, 11);
     --DARKBGCOLOR: #383838; 
-    --COMP-COLOR:rgb(255, 198, 6);
+    --COMP-COLOR:#ffc606;
     --FONTCOLOR: rgb(255, 255, 255);
     --SECOND-FONT-COLOR: rgb(247, 237, 234);
     --THIRD-FONT-COLOR: rgb(244, 244, 243);
@@ -29,11 +29,6 @@ img {
     height: auto;
 }
 
-video {
-    display: block;
-    height: auto;
-}
-
 body {
     font-family: "Roboto", sans-serif;
     font-size: 1.5rem;
@@ -50,6 +45,21 @@ body {
 .inner-container {
     width: 80%;
     margin-inline: auto;
+}
+
+/* BAKCGORUND COLORS */
+
+header, main {
+    background-color: var(--BGCOLOR);
+}
+
+.projects-container {
+    background-color: var(--FONTCOLOR);
+    color: var(--DARKBGCOLOR);
+}
+
+footer {
+    background-color: var(--CONTRAST-COLOR);
 }
 
 /* GENERAL STYLES */
@@ -100,6 +110,11 @@ main .inner-container {
 
 }
 
+/* main h1 {
+    font-weight: 900;
+    letter-spacing: 2px;
+} */
+
 .content-conatiner {
     /* flex-grow: 3;
     flex-shrink: 1; */
@@ -135,13 +150,19 @@ main .inner-container {
     width: 1.5rem;
 }
 
-.video-container {
+.animated-icon-container {
     flex: 1 1 40vw;
     place-self: center;
+    text-align: center;
 }
 
 .projects-container .inner-container {
-    padding: 2rem 0;
+    /* height: 60vh; */
+    padding: 10vh 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    gap: 2rem;
 }
 
 .projects-container h2 {
@@ -188,12 +209,22 @@ main .inner-container {
 }
 
 footer .inner-container {
-    min-height: min(15vh, 100px);
+    min-height: min(20vh, 150px);
     background-color: var(--CONTRAST-COLOR);
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
+
+}
+.footer-references {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-references a:any-link {
+    color: var(--FONTCOLOR);
 
 }
 
@@ -203,18 +234,17 @@ footer .inner-container {
     border-radius: 5px;
 }
 
-/* BAKCGORUND COLORS */
+/* MOBILE STYLES */
 
-header, main {
-    background-color: var(--BGCOLOR);
-}
+@media screen and (max-width: 650px) {
+   main .inner-container {
+    flex-wrap: wrap;
+   }
 
-.projects-container {
-    background-color: var(--FONTCOLOR);
-    color: var(--DARKBGCOLOR);
-}
+   .content-conatiner {
+        font-size: 1.2rem;
+    }
+    
 
-footer {
-    background-color: var(--CONTRAST-COLOR);
 }
 
